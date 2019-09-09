@@ -20,7 +20,7 @@ protocol RestaurantPresentationModelLogic: class {
 }
 
 class RestaurantPresenter: RestaurantPresentationLogic, RestaurantPresentationModelLogic, RestaurantParametersLogic {
-	
+
 	weak var view: RestaurantDisplayLogic?
 	var model: RestaurantModel?
 

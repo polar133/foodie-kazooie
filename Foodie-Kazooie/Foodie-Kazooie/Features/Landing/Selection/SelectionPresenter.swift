@@ -144,9 +144,9 @@ class SelectionPresenter: SelectionPresentationLogic, SelectionPresentationModel
     func getImageFor(id: Int) -> String? {
         switch self.segmentSelected {
         case .categories:
-            return self.model?.categories?.categories.filter{ $0.categoryDetail.id == id }[0].categoryDetail.imageURL
+            return self.model?.categories?.categories.filter { $0.categoryDetail.id == id }[0].categoryDetail.imageURL
         case .cousines:
-            return self.model?.cuisines?.cuisines.filter{ $0.cuisine.id == id }[0].cuisine.imageURL
+            return self.model?.cuisines?.cuisines.filter { $0.cuisine.id == id }[0].cuisine.imageURL
         }
     }
 }

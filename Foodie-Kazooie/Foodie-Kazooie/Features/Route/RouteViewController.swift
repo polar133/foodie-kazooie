@@ -13,12 +13,14 @@ import MapKit
 protocol RouteDisplayLogic: class {
     func setPins(locations: [LocationViewModel])
     func goToRestaurant(viewController: UIViewController)
+    func goToDashboard(viewController: UIViewController)
 }
 
 class RouteViewController: KazooieViewController, RouteDisplayLogic {
 	var presenter: RoutePresentationLogic?
 	var params: RouteParametersLogic?
     var fpc: FloatingPanelController?
+    var saveAvailable: Bool = true
 
     @IBOutlet private weak var mapView: MKMapView!
 
@@ -43,7 +45,9 @@ class RouteViewController: KazooieViewController, RouteDisplayLogic {
 
         self.title = self.presenter?.getName()
         self.presenter?.loadRestaurants()
-        addCustomizedNextBtn()
+        if saveAvailable {
+            addCustomizedNextBtn()
+        }
 	}
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -96,6 +100,11 @@ class RouteViewController: KazooieViewController, RouteDisplayLogic {
 
     func goToRestaurant(viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func goToDashboard(viewController: UIViewController) {
+        let navController = UINavigationController(rootViewController: viewController)
+        self.present(navController, animated: true, completion: nil)
     }
 }
 

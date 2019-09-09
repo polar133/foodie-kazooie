@@ -13,7 +13,7 @@ protocol RestaurantDisplayLogic: class {
 
 }
 
-public class RestaurantViewController: UIViewController, RestaurantDisplayLogic {
+public class RestaurantViewController: KazooieViewController, RestaurantDisplayLogic {
 	var presenter: RestaurantPresentationLogic?
     var params: RestaurantParametersLogic?
 
@@ -49,6 +49,11 @@ public class RestaurantViewController: UIViewController, RestaurantDisplayLogic 
         self.title = "Restaurant"
         setupView()
 	}
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
 
     func setupView() {
         containerView.backgroundColor = UITheme.Colors.background

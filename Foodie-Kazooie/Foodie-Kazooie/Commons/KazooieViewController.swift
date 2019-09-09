@@ -60,9 +60,9 @@ open class KazooieViewController: UIViewController {
     }
 
     func hideLoading() {
-        loadingView?.endLoading()
-        loadingView?.removeFromSuperview()
-        loadingView = nil
+        self.loadingView?.endLoading()
+        self.loadingView?.removeFromSuperview()
+        self.loadingView = nil
     }
 
     func showError(msg: String) {

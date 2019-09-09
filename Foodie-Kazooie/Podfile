@@ -8,7 +8,6 @@ target 'Foodie-Kazooie' do
   pod 'Alamofire', '~> 5.0.0-rc.1'  #Networking
   pod 'OHHTTPStubs/Swift'           #Mocks of response
   pod 'lottie-ios'                  #Animation
-  pod 'Hero'                        #Animation
   pod 'FloatingPanel'
   pod 'fluid-slider'
   pod 'IQKeyboardManagerSwift'
