@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,11 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        #if DEBUG
-        #endif
+        FoodieStubs().enableStubs()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
+        UIFont.overrideInitialize()
+        IQKeyboardManager.shared.enable = true
+        let navController = UINavigationController(rootViewController: CreateRouteFactory().getCreateRouteViewController())
+        window?.rootViewController = navController
         return true
     }
 }
