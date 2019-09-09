@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 
 protocol LocationDisplayLogic: class {
+    func showLoading()
+    func hideLoading()
     func goToSelection(viewController: UIViewController)
 }
 

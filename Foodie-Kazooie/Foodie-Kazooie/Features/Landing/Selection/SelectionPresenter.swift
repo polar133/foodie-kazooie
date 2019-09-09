@@ -56,6 +56,7 @@ class SelectionPresenter: SelectionPresentationLogic, SelectionPresentationModel
     }
 
     func loadCategories() {
+        self.view?.showLoading()
         model?.getCategories()
     }
 
@@ -116,7 +117,7 @@ class SelectionPresenter: SelectionPresentationLogic, SelectionPresentationModel
                                                          name: cuisines.cuisine.name,
                                                          isSelected: false))
         }
-
+        self.view?.hideLoading()
         self.view?.reloadTableView(index: nil)
     }
 
@@ -129,10 +130,12 @@ class SelectionPresenter: SelectionPresentationLogic, SelectionPresentationModel
     }
 
     func buildRoute() {
+        self.view?.showLoading()
         self.model?.getRestaurants()
     }
 
     func presentRoute(restaurants: Restaurants) {
+        self.view?.hideLoading()
         let vc = RouteFactory().getRouteViewController()
         vc.params?.setRestaurants(rests: restaurants)
         self.view?.goToRoute(viewController: vc)

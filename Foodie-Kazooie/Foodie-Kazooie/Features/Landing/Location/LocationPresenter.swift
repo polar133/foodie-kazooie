@@ -30,10 +30,12 @@ class LocationPresenter: LocationPresentationLogic, LocationPresentationModelLog
     }
 
     func locationSelected(lat: Double, lon: Double) {
+        view?.showLoading()
         self.model?.getCity(lat: lat, lon: lon)
     }
 
     func presentSelection() {
+        view?.hideLoading()
         let vc = SelectionFactory().getSelectionViewController()
         guard let model = model?.route else {
             return

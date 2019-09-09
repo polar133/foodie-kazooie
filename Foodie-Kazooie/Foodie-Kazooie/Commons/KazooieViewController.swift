@@ -47,9 +47,29 @@ open class KazooieViewController: UIViewController {
     }
 
     private func addCustomizedBackBtn() {
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "close")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "close")
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "left")
         navigationController?.navigationBar.tintColor = UITheme.Colors.primary
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+
+    func showLoading() {
+        loadingView = LoadingView(frame: self.view.bounds)
+        loadingView?.addToView(self.view, equalTo: view)
+        loadingView?.startLoading()
+    }
+
+    func hideLoading() {
+        loadingView?.endLoading()
+        loadingView?.removeFromSuperview()
+        loadingView = nil
+    }
+
+    func showError(msg: String) {
+
+    }
+
+    func hideError() {
+
     }
 }

@@ -9,6 +9,8 @@
 import UIKit
 
 protocol SelectionDisplayLogic: class {
+    func showLoading()
+    func hideLoading()
     func goToRoute(viewController: UIViewController)
     func reloadTableView(index: Int?)
 }
@@ -41,8 +43,14 @@ class SelectionViewController: KazooieViewController, SelectionDisplayLogic {
         configTableView()
         presenter?.loadCategories()
         presenter?.loadCuisines()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "->", style: .plain, target: self, action: #selector(addTapped))
+        addCustomizedNextBtn()
 	}
+
+    private func addCustomizedNextBtn() {
+        let rightButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(addTapped))
+        rightButton.image = UIImage(named: "right")
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
 
     func configTableView() {
         tableView.register(UINib(nibName: "SelectionHeader", bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: "SelectionHeader")

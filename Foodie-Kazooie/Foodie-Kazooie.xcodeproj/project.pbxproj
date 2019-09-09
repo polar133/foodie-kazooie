@@ -89,6 +89,7 @@
 		96789C922325DC680042F3BA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C912325DC680042F3BA /* LocationViewModel.swift */; };
 		96789C962325DDFA0042F3BA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C942325DDFA0042F3BA /* RestaurantTableViewCell.swift */; };
 		96789C972325DDFA0042F3BA /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96789C952325DDFA0042F3BA /* RestaurantTableViewCell.xib */; };
+		96789C992325F0080042F3BA /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C982325F0080042F3BA /* RestaurantViewModel.swift */; };
 		96EDA2022324136700098D36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDA2012324136700098D36 /* AppDelegate.swift */; };
 		96EDA2092324136A00098D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EDA2082324136A00098D36 /* Assets.xcassets */; };
 		96EDA20C2324136A00098D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EDA20A2324136A00098D36 /* LaunchScreen.storyboard */; };
@@ -188,6 +189,7 @@
 		96789C912325DC680042F3BA /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		96789C942325DDFA0042F3BA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		96789C952325DDFA0042F3BA /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
+		96789C982325F0080042F3BA /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 		96EDA1FE2324136700098D36 /* Foodie-Kazooie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodie-Kazooie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EDA2012324136700098D36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96EDA2082324136A00098D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 		96789C752325C3790042F3BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				96789C982325F0080042F3BA /* RestaurantViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				96789C902325DC250042F3BA /* MKMapView+Extension.swift in Sources */,
 				9625405023249A0C00D64718 /* LocationViewController.swift in Sources */,
 				96789C742325C3700042F3BA /* RestaurantService.swift in Sources */,
+				96789C992325F0080042F3BA /* RestaurantViewModel.swift in Sources */,
 				9625403C23248EA800D64718 /* CreateRoutePresenter.swift in Sources */,
 				96789C562325729F0042F3BA /* Cities.swift in Sources */,
 				96789C5E232589B00042F3BA /* Images.swift in Sources */,
