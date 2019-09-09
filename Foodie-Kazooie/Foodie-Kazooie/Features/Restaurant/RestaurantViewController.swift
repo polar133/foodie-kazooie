@@ -81,10 +81,14 @@ public class RestaurantViewController: KazooieViewController, RestaurantDisplayL
         cuisinesValue.text = viewModel?.cuisines
         timingsValue.text = viewModel?.timing
         averageCostForTwoValue.text = viewModel?.averageCost
+        let images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        let image = UIImage(named: "\(images.randomElement() ?? 1)")
+
         guard let photo = viewModel?.photoURL, let url = URL(string: photo) else {
+            self.photoImage.image = image
             return
         }
-        self.photoImage.sd_setImage(with: url)
+        self.photoImage.sd_setImage(with: url, placeholderImage: image)
     }
 
 }

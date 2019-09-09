@@ -55,10 +55,9 @@ class SelectionService: SelectionServiceLogic {
             "count": amout,
             "lat": lat,
             "lon": lon,
-            "radius": 5000,
-            "cuisines": route.cusines ?? [],
-            "category": route.categories ?? [],
-            "sort": "rating"
+            "cuisines": route.cusines?.compactMap{ $0.cuisine.id } ?? [],
+            "category": route.categories?.compactMap{ $0.categoryDetail.id } ?? [],
+            "sort": "real_distance"
         ]
         AF.request(APIFoodie.search, method: .get, parameters: parameters, headers: headers)
             .responseDecodable(of: Restaurants.self, queue: .global()) { response in

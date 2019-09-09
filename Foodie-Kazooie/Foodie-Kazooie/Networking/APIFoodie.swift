@@ -17,7 +17,7 @@ enum APIFoodie {
 
     static let imageURL = "https://pixabay.com/api/" //Docs: https://pixabay.com/api/docs/
 
-    static let AuthHeader = ["user-key": ""]
+    static let AuthHeader = ["user-key": ""] //Add API KEY
     static let cities = "\(APIFoodie.url)/cities"
     static let categories = "\(APIFoodie.url)/categories"
     static let cuisines = "\(APIFoodie.url)/cuisines"

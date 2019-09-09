@@ -53,7 +53,9 @@ class LoadingView: UIView {
     // MARK: - Public
 
     @objc public func startLoading() {
-        runSpinAnimationOnView(imageLoading, duration: 60, rotations: 360)
+        DispatchQueue.main.async {
+            self.runSpinAnimationOnView(self.imageLoading, duration: 60, rotations: 360)
+        }
     }
 
     @objc public func endLoading() {

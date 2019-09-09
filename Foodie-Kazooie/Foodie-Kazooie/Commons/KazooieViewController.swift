@@ -54,15 +54,19 @@ open class KazooieViewController: UIViewController {
     }
 
     func showLoading() {
-        loadingView = LoadingView(frame: self.view.bounds)
-        loadingView?.addToView(self.view, equalTo: view)
-        loadingView?.startLoading()
+        DispatchQueue.main.async {
+            self.loadingView = LoadingView(frame: self.view.bounds)
+            self.loadingView?.addToView(self.view, equalTo: self.view)
+            self.loadingView?.startLoading()
+        }
     }
 
     func hideLoading() {
-        self.loadingView?.endLoading()
-        self.loadingView?.removeFromSuperview()
-        self.loadingView = nil
+        DispatchQueue.main.async {
+            self.loadingView?.endLoading()
+            self.loadingView?.removeFromSuperview()
+            self.loadingView = nil
+        }
     }
 
     func showError(msg: String) {

@@ -32,10 +32,13 @@ class RestaurantTableViewCell: UITableViewCell {
         lineView.backgroundColor = UITheme.Colors.primary
         self.nameLabel.text = name
         if photoImage.image == nil {
+            let images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+            let image = UIImage(named: "\(images.randomElement() ?? 1)")
             guard let url = URL(string: photoURL) else {
+                self.photoImage.image = image
                 return
             }
-            self.photoImage.sd_setImage(with: url)
+            self.photoImage.sd_setImage(with: url, placeholderImage: image)
         }
     }
 

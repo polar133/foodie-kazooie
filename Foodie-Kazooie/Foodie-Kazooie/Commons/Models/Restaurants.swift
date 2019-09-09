@@ -59,10 +59,8 @@ struct RestaurantLocation: Codable {
 
 struct RestaurantRating: Codable {
     let rating: String
-    let votes: String
 
     private enum CodingKeys: String, CodingKey {
         case rating = "rating_text"
-        case votes = "votes"
     }
 }
