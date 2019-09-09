@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorView" customModule="Foodie_Kazooie" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="M1S-QO-Qz8">
+            <rect key="frame" x="0.0" y="0.0" width="302" height="237"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn-no-response" translatesAutoresizingMaskIntoConstraints="NO" id="D22-p1-Bqe">
+                    <rect key="frame" x="119" y="22" width="64" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="D22-p1-Bqe" secondAttribute="height" multiplier="1:1" constant="1" id="DCR-ef-bUx"/>
+                        <constraint firstAttribute="width" constant="64" id="Mmc-2A-LJV"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x9-Nu-VZr">
+                    <rect key="frame" x="47" y="160.5" width="208" height="40"/>
+                    <color key="backgroundColor" red="0.96223360300000005" green="0.97241359949999995" blue="0.97965711359999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ErrorViewTryAgainButton"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BWd-UW-v5o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                    <state key="normal" title="Reintentar">
+                        <color key="titleColor" red="0.36078431370000003" green="0.3803921569" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En estos momentos no lo podemos atender, por favor intentelo mas tarde." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eO0-Pz-6B2">
+                    <rect key="frame" x="33" y="93" width="236" height="51.5"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ErrorViewDescriptionLabel"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <color key="textColor" red="0.54088878630000004" green="0.56919938329999997" blue="0.60183137659999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="6x9-Nu-VZr" firstAttribute="centerX" secondItem="M1S-QO-Qz8" secondAttribute="centerX" id="Epl-FJ-ADh"/>
+                <constraint firstItem="6x9-Nu-VZr" firstAttribute="leading" secondItem="Pgr-vc-M2E" secondAttribute="leading" constant="47" id="Kxw-Jb-MdG"/>
+                <constraint firstItem="6x9-Nu-VZr" firstAttribute="top" secondItem="eO0-Pz-6B2" secondAttribute="bottom" constant="16" id="OGx-V1-OgB"/>
+                <constraint firstItem="Pgr-vc-M2E" firstAttribute="trailing" secondItem="6x9-Nu-VZr" secondAttribute="trailing" constant="47" id="TB6-OK-qWE"/>
+                <constraint firstItem="eO0-Pz-6B2" firstAttribute="top" secondItem="D22-p1-Bqe" secondAttribute="bottom" constant="8" id="cAN-VE-SsG"/>
+                <constraint firstItem="eO0-Pz-6B2" firstAttribute="centerY" secondItem="M1S-QO-Qz8" secondAttribute="centerY" id="gpU-41-OYU"/>
+                <constraint firstItem="eO0-Pz-6B2" firstAttribute="leading" secondItem="Pgr-vc-M2E" secondAttribute="leading" constant="33" id="h3f-qD-sLl"/>
+                <constraint firstItem="D22-p1-Bqe" firstAttribute="centerX" secondItem="M1S-QO-Qz8" secondAttribute="centerX" id="mAR-eM-JXe"/>
+                <constraint firstItem="Pgr-vc-M2E" firstAttribute="trailing" secondItem="eO0-Pz-6B2" secondAttribute="trailing" constant="33" id="mTL-NR-jUV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Pgr-vc-M2E"/>
+            <point key="canvasLocation" x="16" y="-273.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icn-no-response" width="16" height="16"/>
+    </resources>
+</document>

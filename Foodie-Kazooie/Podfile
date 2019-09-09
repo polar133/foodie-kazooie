@@ -9,7 +9,11 @@ target 'Foodie-Kazooie' do
   pod 'OHHTTPStubs/Swift'           #Mocks of response
   pod 'lottie-ios'                  #Animation
   pod 'Hero'                        #Animation
-
+  pod 'FloatingPanel'
+  pod 'fluid-slider'
+  pod 'IQKeyboardManagerSwift'
+  pod 'SDWebImage', '~> 5.0'
+  
   target 'Foodie-KazooieTests' do
     inherit! :search_paths
   end
