@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="pfbeausanspro_semibold-webfont.ttf">
+            <string>PFBeauSansPro-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingView" customModule="Foodie_Kazooie" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="m9C-Ws-l4C" id="xVq-YY-s24"/>
+                <outlet property="imageLoading" destination="Ke4-3b-dAL" id="uIs-1s-nn1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhC-bC-0sE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-eo-BdE">
+                    <rect key="frame" x="0.0" y="432" width="414" height="32"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="Ke4-3b-dAL">
+                            <rect key="frame" x="195" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="4li-y3-nrW"/>
+                                <constraint firstAttribute="width" constant="24" id="Ac1-YL-C7M"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9C-Ws-l4C">
+                            <rect key="frame" x="207" y="32" width="0.0" height="0.0"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="PFBeauSansPro-SemiBold" family="PF BeauSans Pro" pointSize="14"/>
+                            <color key="textColor" red="0.54117647059999996" green="0.56862745100000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="m9C-Ws-l4C" firstAttribute="top" secondItem="Ke4-3b-dAL" secondAttribute="bottom" constant="8" id="9rU-jD-N6x"/>
+                        <constraint firstAttribute="bottom" secondItem="m9C-Ws-l4C" secondAttribute="bottom" id="dLg-ab-nmU"/>
+                        <constraint firstItem="m9C-Ws-l4C" firstAttribute="centerX" secondItem="4h2-eo-BdE" secondAttribute="centerX" id="fN7-bT-LBu"/>
+                        <constraint firstItem="Ke4-3b-dAL" firstAttribute="top" secondItem="4h2-eo-BdE" secondAttribute="top" id="n9V-Co-Te4"/>
+                        <constraint firstItem="Ke4-3b-dAL" firstAttribute="centerX" secondItem="4h2-eo-BdE" secondAttribute="centerX" id="pFK-HM-Mt8"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="bJy-GQ-MXi"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="yhC-bC-0sE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1px-Ln-RUt"/>
+                <constraint firstItem="4h2-eo-BdE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H7G-Hc-3wb"/>
+                <constraint firstItem="yhC-bC-0sE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LWc-7t-WQv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yhC-bC-0sE" secondAttribute="trailing" id="Sln-Dw-9Be"/>
+                <constraint firstItem="4h2-eo-BdE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="giY-c7-ME0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4h2-eo-BdE" secondAttribute="trailing" id="iMx-f3-hYd"/>
+                <constraint firstAttribute="bottom" secondItem="yhC-bC-0sE" secondAttribute="bottom" id="uyB-uO-our"/>
+                <constraint firstItem="4h2-eo-BdE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="wQu-IS-hwT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loading" width="24" height="24"/>
+    </resources>
+</document>
