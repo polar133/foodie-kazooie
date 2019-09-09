@@ -80,6 +80,7 @@ class RoutePresenter: RoutePresentationLogic, RoutePresentationModelLogic, Route
     }
 
     func goToDashboard() {
-        //TODO: Go to Dashboard
+        let vc = DashboardFactory().getDashboardViewController()
+        self.view?.goToDashboard(viewController: vc)
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Restaurants: Decodable {
+struct Restaurants: Codable {
     let restaurants: [Restaurant]
     var name: String?
 }
 
-struct Restaurant: Decodable {
+struct Restaurant: Codable {
     let detail: RestaurantDetail
 
     private enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ struct Restaurant: Decodable {
     }
 }
 
-struct RestaurantDetail: Decodable {
+struct RestaurantDetail: Codable {
     let id: String
     let name: String
     let url: String
@@ -49,7 +49,7 @@ struct RestaurantDetail: Decodable {
     }
 }
 
-struct RestaurantLocation: Decodable {
+struct RestaurantLocation: Codable {
     let address: String
     let locality: String
     let city: String
@@ -57,7 +57,7 @@ struct RestaurantLocation: Decodable {
     let longitude: String
 }
 
-struct RestaurantRating: Decodable {
+struct RestaurantRating: Codable {
     let rating: String
     let votes: String
 

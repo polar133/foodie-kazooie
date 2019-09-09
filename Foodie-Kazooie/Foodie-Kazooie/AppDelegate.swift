@@ -20,8 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         UIFont.overrideInitialize()
         IQKeyboardManager.shared.enable = true
-        let navController = UINavigationController(rootViewController: CreateRouteFactory().getCreateRouteViewController())
-        window?.rootViewController = navController
+        let savedRestaurants = RestaurantHelper().getRestaurants()
+        if savedRestaurants.isEmpty {
+            let navController = UINavigationController(rootViewController: CreateRouteFactory().getCreateRouteViewController())
+            window?.rootViewController = navController
+        } else {
+            let navController = UINavigationController(rootViewController: DashboardFactory().getDashboardViewController())
+            window?.rootViewController = navController
+        }
         return true
     }
 }

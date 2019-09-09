@@ -25,9 +25,8 @@ class RouteModel: RouteModelLogic, RouteDataStore {
         guard let restaurants = self.restaurants else {
             return
         }
-        let defaults = UserDefaults.standard
-        var savedRestaurants = defaults.object(forKey: "restaurants") as? [Restaurants] ?? [Restaurants]()
-        savedRestaurants.append(restaurants)
-        defaults.set(restaurants, forKey: "restaurants")
+        var value = RestaurantHelper().getRestaurants()
+        value.append(restaurants)
+        RestaurantHelper().saveRestaurants(restaurants: value)
     }
 }

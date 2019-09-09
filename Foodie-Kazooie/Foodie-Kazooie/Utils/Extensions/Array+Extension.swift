@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array {
-    mutating func mutateEach(_ body: (inout Element)->()) {
+    mutating func mutateEach(_ body: (inout Element) -> Void) {
         for index in self.indices {
             body( &self[index] )
         }

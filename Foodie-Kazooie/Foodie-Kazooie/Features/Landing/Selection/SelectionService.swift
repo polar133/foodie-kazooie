@@ -79,7 +79,7 @@ class SelectionService: SelectionServiceLogic {
         ]
 
         AF.request(APIFoodie.imageURL, method: .get, parameters: parameters)
-            .responseDecodable(of: Images.self, queue: .global(qos: .background)) { response in
+            .responseDecodable(of: Images.self, queue: .global()) { response in
                 if response.value != nil {
                     completionHandler(id, response.value)
                 } else {
