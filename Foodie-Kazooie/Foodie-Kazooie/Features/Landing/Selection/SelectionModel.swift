@@ -24,29 +24,29 @@ class SelectionModel: SelectionModelLogic, SelectionDataStore {
     var route: Route?
     var categories: Categories?
     var cuisines: Cuisines?
+    var imagesCuisines: [Int: String] = [:]
+    var imagesCategories: [Int: String] = [:]
 
     private func updateImagesForCategories() {
-        var imagesCategories: [Int: String] = [:]
         self.categories?.categories.mutateEach { [weak self] category in
             self?.service?.getImage(id: category.categoryDetail.id, name: category.categoryDetail.name, completionHandler: { [weak self] id, response in
                 guard let images = response, !images.hits.isEmpty else {
                     return
                 }
-                imagesCategories[id] = images.hits[0].largeImageURL
-                self?.categories?.setImageFor(images: imagesCategories)
+                self?.imagesCategories[id] = images.hits[0].largeImageURL
+                self?.categories?.setImageFor(images: self?.imagesCategories ?? [:])
             })
         }
     }
 
     private func updateImagesForCuisines() {
-        var imagesCuisines: [Int: String] = [:]
         self.cuisines?.cuisines.mutateEach { [weak self] cuisine in
             self?.service?.getImage(id: cuisine.cuisine.id, name: cuisine.cuisine.name, completionHandler: { [weak self] id, response in
                 guard let images = response, !images.hits.isEmpty else {
                     return
                 }
-                imagesCuisines[id] = images.hits[0].largeImageURL
-                self?.cuisines?.setImageFor(images: imagesCuisines)
+                self?.imagesCuisines[id] = images.hits[0].largeImageURL
+                self?.cuisines?.setImageFor(images: self?.imagesCuisines ?? [:])
             })
         }
     }

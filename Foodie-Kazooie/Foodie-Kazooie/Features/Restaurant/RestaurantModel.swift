@@ -12,11 +12,11 @@ protocol RestaurantModelLogic {
 }
 
 protocol RestaurantDataStore {
-	//var name: String { get set }
+	var restaurant: RestaurantDetail? { get set }
 }
 
 class RestaurantModel: RestaurantModelLogic, RestaurantDataStore {
 	var service: RestaurantService?
 	weak var presenter: RestaurantPresentationModelLogic?
-	//var name: String = ""
+	var restaurant: RestaurantDetail?
 }

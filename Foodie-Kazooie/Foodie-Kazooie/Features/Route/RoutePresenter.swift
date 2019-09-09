@@ -61,9 +61,10 @@ class RoutePresenter: RoutePresentationLogic, RoutePresentationModelLogic, Route
         guard let restaurants = self.model?.restaurants else {
             return
         }
-        let restaurant = restaurants.restaurants[index]
-        //TODO: Go to restaurant
-
+        let restaurant = restaurants.restaurants[index].detail
+        let vc = RestaurantFactory().getRestaurantViewController()
+        vc.params?.setRestaurant(rest: restaurant)
+        self.view?.goToRestaurant(viewController: vc)
     }
 
     func getRowFor(index: Int) -> (String, String)? {

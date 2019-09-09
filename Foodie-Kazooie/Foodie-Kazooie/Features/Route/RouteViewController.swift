@@ -12,6 +12,7 @@ import MapKit
 
 protocol RouteDisplayLogic: class {
     func setPins(locations: [LocationViewModel])
+    func goToRestaurant(viewController: UIViewController)
 }
 
 class RouteViewController: KazooieViewController, RouteDisplayLogic {
@@ -39,10 +40,10 @@ class RouteViewController: KazooieViewController, RouteDisplayLogic {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        loadFloatingPanel()
+
         self.title = self.presenter?.getName()
         self.presenter?.loadRestaurants()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "->", style: .plain, target: self, action: #selector(saveTapped))
+        addCustomizedNextBtn()
 	}
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,8 +58,15 @@ class RouteViewController: KazooieViewController, RouteDisplayLogic {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadFloatingPanel()
         navigationController?.navigationBar.tintColor = UITheme.Colors.primary
         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
+    private func addCustomizedNextBtn() {
+        let rightButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(saveTapped))
+        rightButton.image = UIImage(named: "check")
+        self.navigationItem.rightBarButtonItem = rightButton
     }
 
     func loadFloatingPanel() {
@@ -84,6 +92,10 @@ class RouteViewController: KazooieViewController, RouteDisplayLogic {
 
     @IBAction func saveTapped(_ sender: Any) {
         self.presenter?.saveRoute()
+    }
+
+    func goToRestaurant(viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

@@ -57,8 +57,10 @@ class LoadingView: UIView {
     }
 
     @objc public func endLoading() {
-        imageLoading.layer.removeAllAnimations()
-        removeFromSuperview()
+        DispatchQueue.main.async {
+            self.imageLoading.layer.removeAllAnimations()
+            self.removeFromSuperview()
+        }
     }
 
     @objc public func setDescription(_ description: String) {
