@@ -81,9 +81,10 @@ class SelectionModel: SelectionModelLogic, SelectionDataStore {
         guard let route = self.route else {
             return
         }
-        service?.getRestaurants(route: route, completionHandler: { (restaurants) in
-            if restaurants != nil {
-                print(restaurants)
+        service?.getRestaurants(route: route, completionHandler: { [weak self] restaurants in
+            if var rests = restaurants {
+                rests.name = self?.route?.name
+                self?.presenter?.presentRoute(restaurants: rests)
             }
         })
     }

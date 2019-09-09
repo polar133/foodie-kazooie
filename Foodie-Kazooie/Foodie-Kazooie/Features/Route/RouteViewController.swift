@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import FloatingPanel
+import MapKit
 
 protocol RouteDisplayLogic: class {
-
+    func setPins(locations: [LocationViewModel])
 }
 
 class RouteViewController: KazooieViewController, RouteDisplayLogic {
 	var presenter: RoutePresentationLogic?
 	var params: RouteParametersLogic?
+    var fpc: FloatingPanelController?
+
+    @IBOutlet private weak var mapView: MKMapView!
 
 	// MARK: Object lifecycle
 	init() {
@@ -34,5 +39,70 @@ class RouteViewController: KazooieViewController, RouteDisplayLogic {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        loadFloatingPanel()
+        self.title = self.presenter?.getName()
+        self.presenter?.loadRestaurants()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "->", style: .plain, target: self, action: #selector(saveTapped))
 	}
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        fpc?.removePanelFromParent(animated: animated)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UITheme.Colors.primary
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
+    func loadFloatingPanel() {
+        fpc = FloatingPanelController()
+        fpc?.delegate = self
+        let contentVC = RestaurantsViewController()
+        contentVC.presenter = self.presenter
+        fpc?.set(contentViewController: contentVC)
+        fpc?.track(scrollView: contentVC.getTableView())
+        fpc?.addPanel(toParent: self)
+        fpc?.surfaceView.cornerRadius = 9.0
+    }
+
+    func setPins(locations: [LocationViewModel]) {
+        for location in locations {
+            let london = MKPointAnnotation()
+            london.title = location.name
+            london.coordinate = CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon)
+            mapView.addAnnotation(london)
+        }
+        mapView.zoomToFitMapAnnotations()
+    }
+
+    @IBAction func saveTapped(_ sender: Any) {
+        self.presenter?.saveRoute()
+    }
+}
+
+extension RouteViewController: FloatingPanelControllerDelegate, MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else {
+            return nil
+        }
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+
+        return annotationView
+    }
 }

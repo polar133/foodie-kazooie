@@ -83,6 +83,12 @@
 		96789C7F2325CB160042F3BA /* LocationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C7E2325CB160042F3BA /* LocationModelTests.swift */; };
 		96789C822325CB4C0042F3BA /* SelectionModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C812325CB4C0042F3BA /* SelectionModelTests.swift */; };
 		96789C842325CB580042F3BA /* SelectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C832325CB580042F3BA /* SelectionServiceTests.swift */; };
+		96789C8D2325D85D0042F3BA /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C8B2325D85D0042F3BA /* RestaurantsViewController.swift */; };
+		96789C8E2325D85D0042F3BA /* RestaurantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96789C8C2325D85D0042F3BA /* RestaurantsViewController.xib */; };
+		96789C902325DC250042F3BA /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C8F2325DC250042F3BA /* MKMapView+Extension.swift */; };
+		96789C922325DC680042F3BA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C912325DC680042F3BA /* LocationViewModel.swift */; };
+		96789C962325DDFA0042F3BA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96789C942325DDFA0042F3BA /* RestaurantTableViewCell.swift */; };
+		96789C972325DDFA0042F3BA /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96789C952325DDFA0042F3BA /* RestaurantTableViewCell.xib */; };
 		96EDA2022324136700098D36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDA2012324136700098D36 /* AppDelegate.swift */; };
 		96EDA2092324136A00098D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EDA2082324136A00098D36 /* Assets.xcassets */; };
 		96EDA20C2324136A00098D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EDA20A2324136A00098D36 /* LaunchScreen.storyboard */; };
@@ -176,6 +182,12 @@
 		96789C7E2325CB160042F3BA /* LocationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModelTests.swift; sourceTree = "<group>"; };
 		96789C812325CB4C0042F3BA /* SelectionModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModelTests.swift; sourceTree = "<group>"; };
 		96789C832325CB580042F3BA /* SelectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionServiceTests.swift; sourceTree = "<group>"; };
+		96789C8B2325D85D0042F3BA /* RestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewController.swift; sourceTree = "<group>"; };
+		96789C8C2325D85D0042F3BA /* RestaurantsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantsViewController.xib; sourceTree = "<group>"; };
+		96789C8F2325DC250042F3BA /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
+		96789C912325DC680042F3BA /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		96789C942325DDFA0042F3BA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		96789C952325DDFA0042F3BA /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		96EDA1FE2324136700098D36 /* Foodie-Kazooie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Foodie-Kazooie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EDA2012324136700098D36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96EDA2082324136A00098D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +258,7 @@
 				962540782324B0DF00D64718 /* UIView+Extension.swift */,
 				96789C5B232588DC0042F3BA /* UIImageView+Extension.swift */,
 				96789C5F23258E750042F3BA /* Array+Extension.swift */,
+				96789C8F2325DC250042F3BA /* MKMapView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +369,7 @@
 		9625406423249C4800D64718 /* Route */ = {
 			isa = PBXGroup;
 			children = (
+				96789C8A2325D84F0042F3BA /* Views */,
 				96789C762325C3930042F3BA /* Models */,
 				9625407E2324B2F800D64718 /* RouteFactory.swift */,
 				9625407F2324B2F800D64718 /* RoutePresenter.swift */,
@@ -452,6 +466,7 @@
 		96789C762325C3930042F3BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				96789C912325DC680042F3BA /* LocationViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -489,6 +504,25 @@
 				96789C832325CB580042F3BA /* SelectionServiceTests.swift */,
 			);
 			path = Selection;
+			sourceTree = "<group>";
+		};
+		96789C8A2325D84F0042F3BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96789C932325DDE30042F3BA /* Cells */,
+				96789C8B2325D85D0042F3BA /* RestaurantsViewController.swift */,
+				96789C8C2325D85D0042F3BA /* RestaurantsViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96789C932325DDE30042F3BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96789C942325DDFA0042F3BA /* RestaurantTableViewCell.swift */,
+				96789C952325DDFA0042F3BA /* RestaurantTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		969F3FF92324350400540233 /* Networking */ = {
@@ -674,6 +708,7 @@
 				9625403F23248EA800D64718 /* CreateRouteViewController.xib in Resources */,
 				96254025232489BF00D64718 /* Montserrat-Light.ttf in Resources */,
 				96254028232489BF00D64718 /* Montserrat-Medium.ttf in Resources */,
+				96789C8E2325D85D0042F3BA /* RestaurantsViewController.xib in Resources */,
 				96254043232497C200D64718 /* GET_categories_200.json in Resources */,
 				96254020232489BF00D64718 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				96789C682325C2E50042F3BA /* GET_search_200.json in Resources */,
@@ -691,6 +726,7 @@
 				96254023232489BF00D64718 /* Montserrat-SemiBold.ttf in Resources */,
 				9625406E2324A2A500D64718 /* SelectionTableViewCell.xib in Resources */,
 				96254027232489BF00D64718 /* Montserrat-ThinItalic.ttf in Resources */,
+				96789C972325DDFA0042F3BA /* RestaurantTableViewCell.xib in Resources */,
 				96254022232489BF00D64718 /* Montserrat-ExtraLight.ttf in Resources */,
 				96254021232489BF00D64718 /* Montserrat-RegularItalic.ttf in Resources */,
 				9625405F23249C1A00D64718 /* SelectionViewController.xib in Resources */,
@@ -804,11 +840,13 @@
 				96789C53232561980042F3BA /* RoundedFullButton.swift in Sources */,
 				962540872324B2F800D64718 /* RouteModel.swift in Sources */,
 				962540062324888800D64718 /* APIFoodie.swift in Sources */,
+				96789C8D2325D85D0042F3BA /* RestaurantsViewController.swift in Sources */,
 				96789C702325C3700042F3BA /* RestaurantPresenter.swift in Sources */,
 				96789C62232598500042F3BA /* SelectionHeader.swift in Sources */,
 				9625403D23248EA800D64718 /* CreateRouteViewController.swift in Sources */,
 				96789C5C232588DC0042F3BA /* UIImageView+Extension.swift in Sources */,
 				962540752324B05D00D64718 /* LoadingView.swift in Sources */,
+				96789C902325DC250042F3BA /* MKMapView+Extension.swift in Sources */,
 				9625405023249A0C00D64718 /* LocationViewController.swift in Sources */,
 				96789C742325C3700042F3BA /* RestaurantService.swift in Sources */,
 				9625403C23248EA800D64718 /* CreateRoutePresenter.swift in Sources */,
@@ -825,6 +863,7 @@
 				9625403B23248EA800D64718 /* CreateRouteFactory.swift in Sources */,
 				9625404E23249A0C00D64718 /* LocationFactory.swift in Sources */,
 				96789C722325C3700042F3BA /* RestaurantModel.swift in Sources */,
+				96789C962325DDFA0042F3BA /* RestaurantTableViewCell.swift in Sources */,
 				96789C782325C3B40042F3BA /* Restaurants.swift in Sources */,
 				962540842324B2F800D64718 /* RouteFactory.swift in Sources */,
 				96789C6023258E750042F3BA /* Array+Extension.swift in Sources */,
@@ -841,6 +880,7 @@
 				9625408E2324B50D00D64718 /* KazooieViewController.swift in Sources */,
 				9625406023249C1A00D64718 /* SelectionService.swift in Sources */,
 				962540792324B0DF00D64718 /* UIView+Extension.swift in Sources */,
+				96789C922325DC680042F3BA /* LocationViewModel.swift in Sources */,
 				962540852324B2F800D64718 /* RoutePresenter.swift in Sources */,
 				96EDA2022324136700098D36 /* AppDelegate.swift in Sources */,
 			);

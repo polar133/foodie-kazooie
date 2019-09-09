@@ -42,7 +42,6 @@ class LocationViewController: KazooieViewController, LocationDisplayLogic {
 		super.viewDidLoad()
         self.title = "Current location"
         locationManager.requestAlwaysAuthorization()
-
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         mapView.showsUserLocation = true
@@ -74,7 +73,7 @@ class LocationViewController: KazooieViewController, LocationDisplayLogic {
     }
 
     func goToSelection(viewController: UIViewController) {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.sync { [weak self] in
             self?.navigationController?.pushViewController(viewController, animated: true)
         }
     }

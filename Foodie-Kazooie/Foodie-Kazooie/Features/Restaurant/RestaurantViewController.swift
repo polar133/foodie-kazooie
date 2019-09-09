@@ -9,6 +9,7 @@
 import UIKit
 
 protocol RestaurantDisplayLogic: class {
+
 }
 
 public class RestaurantViewController: UIViewController, RestaurantDisplayLogic {
@@ -17,8 +18,8 @@ public class RestaurantViewController: UIViewController, RestaurantDisplayLogic 
 
 	// MARK: Object lifecycle
 	init() {
-		super.init(nibName: String(describing: RestaurantViewController.self), 
-			bundle: Bundle(for: RestaurantViewController.classForCoder()))
+		super.init(nibName: String(describing: RestaurantViewController.self),
+                   bundle: Bundle(for: RestaurantViewController.classForCoder()))
 	}
 
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

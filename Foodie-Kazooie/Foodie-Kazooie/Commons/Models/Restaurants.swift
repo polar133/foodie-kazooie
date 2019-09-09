@@ -10,6 +10,7 @@ import Foundation
 
 struct Restaurants: Decodable {
     let restaurants: [Restaurant]
+    var name: String?
 }
 
 struct Restaurant: Decodable {

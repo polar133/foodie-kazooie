@@ -9,14 +9,25 @@
 import UIKit
 
 protocol RouteModelLogic {
+    func saveRestaurants()
 }
 
 protocol RouteDataStore {
-	//var name: String { get set }
+	var restaurants: Restaurants? { get set }
 }
 
 class RouteModel: RouteModelLogic, RouteDataStore {
-	var service: RouteService?
+	var service: RouteServiceLogic?
 	weak var presenter: RoutePresentationModelLogic?
-	//var name: String = ""
+	var restaurants: Restaurants?
+
+    func saveRestaurants() {
+        guard let restaurants = self.restaurants else {
+            return
+        }
+        let defaults = UserDefaults.standard
+        var savedRestaurants = defaults.object(forKey: "restaurants") as? [Restaurants] ?? [Restaurants]()
+        savedRestaurants.append(restaurants)
+        defaults.set(restaurants, forKey: "restaurants")
+    }
 }

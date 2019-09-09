@@ -60,9 +60,11 @@ class SelectionViewController: KazooieViewController, SelectionDisplayLogic {
     @IBAction func addTapped(_ sender: Any) {
         self.presenter?.buildRoute()
     }
-    
+
     func goToRoute(viewController: UIViewController) {
-        self.navigationController?.pushViewController(viewController, animated: true)
+        DispatchQueue.main.sync { [weak self] in
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 

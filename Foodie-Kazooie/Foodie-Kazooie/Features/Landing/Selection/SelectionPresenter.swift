@@ -26,7 +26,7 @@ protocol SelectionPresentationLogic: class {
 protocol SelectionPresentationModelLogic: class {
     func presentCategories()
     func presentCuisines()
-    func presentRoute()
+    func presentRoute(restaurants: Restaurants)
 }
 
 enum Segment {
@@ -132,8 +132,9 @@ class SelectionPresenter: SelectionPresentationLogic, SelectionPresentationModel
         self.model?.getRestaurants()
     }
 
-    func presentRoute() {
+    func presentRoute(restaurants: Restaurants) {
         let vc = RouteFactory().getRouteViewController()
+        vc.params?.setRestaurants(rests: restaurants)
         self.view?.goToRoute(viewController: vc)
     }
 
